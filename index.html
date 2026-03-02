@@ -3,88 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gerald | Network Engineer & Linux System Administrator</title>
+<title>Gerald | Network Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0b1220;color:#e5e7eb;line-height:1.7}
-nav{position:fixed;top:0;width:100%;background:rgba(11,18,32,0.95);padding:18px 50px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1f2937}
-nav a{color:#e5e7eb;text-decoration:none;margin-left:25px;font-size:14px;font-weight:500}
-nav a:hover{color:#38bdf8}
-.hero{padding-top:180px;padding-bottom:140px;text-align:center;max-width:1000px;margin:auto}
-.hero h1{font-size:52px;font-weight:700;margin-bottom:20px}
-.hero span{color:#38bdf8}
-.hero p{font-size:19px;color:#9ca3af;max-width:850px;margin:0 auto 30px auto}
-.highlight{margin-top:25px}
-.highlight span{display:inline-block;background:#111827;border:1px solid #1f2937;padding:10px 16px;margin:6px;border-radius:25px;font-size:13px}
-.stats{margin-top:40px;display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
-.stat h3{color:#38bdf8;font-size:26px}
-.stat p{font-size:13px;color:#9ca3af}
-.section-buttons{margin-top:50px}
-.section-buttons a{display:inline-block;margin:10px;padding:14px 28px;border-radius:8px;background:#38bdf8;color:#0b1220;text-decoration:none;font-weight:600;transition:0.3s}
-.section-buttons a:hover{background:#0ea5e9}
-.socials{margin-top:35px}
-.socials a{color:#9ca3af;margin:0 14px;font-size:22px}
-.socials a:hover{color:#38bdf8}
-footer{text-align:center;padding:50px 20px;background:#0b1220;border-top:1px solid #1f2937;color:#6b7280}
-@media(max-width:768px){.hero h1{font-size:38px}}
+body{
+  background:#0b1220;
+  color:#e5e7eb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.card{
+  background:#111827;
+  width:100%;
+  max-width:420px;
+  border-radius:20px;
+  padding:40px 30px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  border:1px solid #1f2937;
+  text-align:center;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.profile-circle{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:#1f2937;
+  margin:0 auto 25px auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:42px;
+  color:#38bdf8;
+  font-weight:700;
+}
+
+h1{
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.role{
+  font-size:14px;
+  color:#38bdf8;
+  margin-bottom:20px;
+}
+
+.description{
+  font-size:14px;
+  color:#9ca3af;
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+.tags{
+  margin-bottom:25px;
+}
+
+.tags span{
+  display:inline-block;
+  background:#0f172a;
+  border:1px solid #1f2937;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  margin:4px;
+}
+
+.buttons a{
+  display:block;
+  margin:10px 0;
+  padding:12px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  background:#38bdf8;
+  color:#0b1220;
+  transition:0.3s;
+}
+
+.buttons a:hover{
+  background:#0ea5e9;
+}
+
+.socials{
+  margin-top:20px;
+}
+
+.socials a{
+  color:#9ca3af;
+  margin:0 12px;
+  font-size:20px;
+}
+
+.socials a:hover{
+  color:#38bdf8;
+}
+
+@media(max-width:480px){
+  .card{
+    padding:30px 20px;
+  }
+}
+
 </style>
 </head>
 <body>
 
-<nav>
-<div><strong>Gerald</strong></div>
-<div>
-<a href="about.html">About</a>
-<a href="skills.html">Skills</a>
-<a href="experience.html">Experience</a>
-<a href="contact.html">Contact</a>
-</div>
-</nav>
+<div class="card">
 
-<div class="hero">
-<h1>Gerald <span>Ibrani</span></h1>
-<p>Network Engineer & Linux System Administrator with hands-on experience in routing architecture, ISP field operations, and secure infrastructure deployment. Focused on building reliable, scalable, and well-structured network systems.</p>
+  <div class="profile-circle">GI</div>
 
-<div class="highlight">
-<span>Mikrotik Routing Specialist</span>
-<span>Linux Infrastructure</span>
-<span>OpenWRT & OPNsense</span>
-<span>Fiber Optic Field Experience</span>
-</div>
+  <h1>Gerald Ibrani</h1>
+  <div class="role">Network Engineer & Linux System Administrator</div>
 
-<div class="stats">
-<div class="stat">
-<h3>3+</h3>
-<p>Router Operating Systems</p>
-</div>
-<div class="stat">
-<h3>ISP</h3>
-<p>Field Technical Experience</p>
-</div>
-<div class="stat">
-<h3>Linux</h3>
-<p>Server Administration</p>
-</div>
-</div>
+  <div class="description">
+    Focused on routing architecture, ISP field operations, Linux server deployment, and secure network infrastructure design.
+  </div>
 
-<div class="section-buttons">
-<a href="about.html">About Me</a>
-<a href="skills.html">Technical Skills</a>
-<a href="experience.html">Professional Experience</a>
-<a href="contact.html">Contact</a>
-</div>
+  <div class="tags">
+    <span>Mikrotik</span>
+    <span>Linux</span>
+    <span>OpenWRT</span>
+    <span>OPNsense</span>
+  </div>
 
-<div class="socials">
-<a href="mailto:geraldibrani@geraldstudio.my.id"><i class="fa-solid fa-envelope"></i></a>
-<a href="https://github.com/heralt-vernandes" target="_blank"><i class="fa-brands fa-github"></i></a>
-</div>
-</div>
+  <div class="buttons">
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="experience.html">Experience</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-<footer>
-<p>© 2026 Gerald Ibrani | Network Engineer & Linux System Administrator</p>
-</footer>
+  <div class="socials">
+    <a href="mailto:geraldibrani@geraldstudio.my.id"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://github.com/heralt-vernandes" target="_blank"><i class="fa-brands fa-github"></i></a>
+  </div>
+
+</div>
 
 </body>
 </html>
