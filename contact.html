@@ -9,13 +9,21 @@
 <body>
 
 <nav>
-  <h2>Gerald</h2>
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+  <div style="display:flex; align-items:center; gap:40px;">
+    <h2 style="margin:0;">Gerald</h2>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
 <section class="hero">
@@ -25,10 +33,15 @@
       <p>
         I am open to opportunities related to network engineering, infrastructure support, and system administration. If you would like to discuss collaboration or professional opportunities, feel free to reach out.
       </p>
-      <div class="buttons" style="justify-content:center; margin-top:20px;">
-        <a href="mailto:geraldibrani@geraldstudio.my.id" class="btn btn-primary">Email Me</a>
+      <div class="buttons" style="justify-content:center; margin-top:20px; flex-wrap:wrap;">
+        <a href="mailto:geraldibrani@geraldstudio.my.id" class="btn btn-primary">Email</a>
+        <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-outline">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/geraldibrani" target="_blank" class="btn btn-outline">LinkedIn</a>
         <a href="https://github.com/heralt-vernandes" target="_blank" class="btn btn-outline">GitHub</a>
       </div>
+      <p style="margin-top:25px; font-size:14px; color:#94a3b8;">
+        Prefer direct contact? You can reach me via email or WhatsApp for faster response. I typically reply within 24 hours.
+      </p>
     </div>
   </div>
 </section>
