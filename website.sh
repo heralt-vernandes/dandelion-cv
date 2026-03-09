@@ -32,5 +32,4 @@ sed -i 's/^post_max_size = .*/post_max_size = 100M/' $PHPINI
 sed -i 's/^upload_max_filesize = .*/upload_max_filesize = 100M/' $PHPINI
 
 systemctl restart apache2
-history -c
 clear
