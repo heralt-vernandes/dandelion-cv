@@ -2,7 +2,7 @@
 set -e
 
 apt update -y
-apt install -y mariadb-server
+apt install -y mariadb-server myphpadmin php php-mysql libapache2-mod-php apache2
 
 systemctl enable mariadb
 systemctl start mariadb
