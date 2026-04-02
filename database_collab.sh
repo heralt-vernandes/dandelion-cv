@@ -1,22 +1,29 @@
 #!/bin/bash
-# Script untuk Database di Google Colab (Tanpa Systemd)
+# Script Database Khusus Google Colab
+set -e
 
-apt update
-apt install -y mariadb-server phpmyadmin php-mysql
+echo "Menginstall MariaDB..."
+apt update -y
+apt install -y mariadb-server php-mysql
 
-# Fix Service: Colab tidak mendukung systemctl, pakai init.d
+# WAJIB: Jalankan MariaDB dulu sebelum konfigurasi DB
+echo "Menjalankan MariaDB Service..."
 /etc/init.d/mariadb start
 
-# Konfigurasi agar bisa diakses dari "luar" (simulasi antar CT)
+# Tunggu sebentar agar socket MariaDB siap
+sleep 2
+
+# Konfigurasi Akses (Agar bisa di-remote jika perlu)
 sed -i "s/^bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf
 /etc/init.d/mariadb restart
 
-# Create database & user untuk Moodle
-mysql <<EOF
-CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'heralt'@'%' IDENTIFIED BY 'heralt';
+# Membuat Database dan User
+echo "Membuat Database Moodle..."
+mysql -u root <<EOF
+CREATE DATABASE IF NOT EXISTS moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'heralt'@'%' IDENTIFIED BY 'heralt';
 GRANT ALL PRIVILEGES ON moodle.* TO 'heralt'@'%';
 FLUSH PRIVILEGES;
 EOF
 
-echo "Database MariaDB siap di background!"
+echo "--- DATABASE SIAP ---"
