@@ -1,14 +1,12 @@
 #!/bin/bash
 set -e
 
-# 1. Update & Install Dependencies
 apt update -y
 apt install -y apache2 php8.1 libapache2-mod-php8.1 php8.1-cli php8.1-mysql php8.1-gd php8.1-xml php8.1-curl php8.1-mbstring php8.1-intl php8.1-zip php8.1-soap php8.1-bcmath wget
 
 systemctl enable apache2
 systemctl start apache2
 
-# 2. Download Moodle 4.05
 cd /var/www/html/
 # Menghapus file index default apache agar tidak bentrok jika ingin moodle di root
 rm -f index.html 
@@ -17,7 +15,6 @@ wget https://download.moodle.org/download.php/direct/stable405/moodle-latest-405
 tar -zxvf moodle-latest-405.tgz
 rm moodle-latest-405.tgz
 
-# 3. Setup Direktori Data (Penting: di luar web root)
 mkdir -p /var/www/moodledata
 chown -R www-data:www-data /var/www/moodledata
 chmod -R 777 /var/www/moodledata
@@ -58,9 +55,12 @@ a2enmod rewrite
 systemctl restart apache2
 
 clear
-echo "==========================================================="
-echo "Instalasi Selesai!"
-echo "URL: https://moodle.geraldstudio.my.id"
-echo "Pastikan di config.php nanti tambahkan: \$CFG->sslproxy = 1;"
-echo "==========================================================="
-history -c
+
+echo "URL: https://moodle.geraldstudio.my.id
+echo "$CFG->sslproxy = 1;"
+
+history -c 
+
+cat /dev/null > ~/.bash_history 
+
+set +o history
