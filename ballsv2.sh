@@ -22,17 +22,14 @@ chmod -R 777 /var/www/moodledata
 chown -R www-data:www-data /var/www/html
 chmod -R 777 /var/www/html
 
-# 4. Optimasi PHP 8.1
 PHPINI="/etc/php/8.1/apache2/php.ini"
-# Menggunakan pemisah | agar lebih aman jika ada karakter khusus
+
 sed -i 's|^;max_input_vars.*|max_input_vars = 5000|' $PHPINI
 sed -i 's|^max_input_vars = .*|max_input_vars = 5000|' $PHPINI
 sed -i 's|^memory_limit = .*|memory_limit = 512M|' $PHPINI
 sed -i 's|^post_max_size = .*|post_max_size = 100M|' $PHPINI
 sed -i 's|^upload_max_filesize = .*|upload_max_filesize = 100M|' $PHPINI
 
-# 5. Konfigurasi VirtualHost Apache (Agar SSL Proxy Cloudflare Dikenali)
-# Kita tambahkan baris untuk menangani HTTPS dari Cloudflare secara pasif
 cat <<EOF > /etc/apache2/sites-available/moodle.conf
 <VirtualHost *:80>
     ServerName moodle.geraldstudio.my.id
