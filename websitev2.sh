@@ -22,8 +22,8 @@ mkdir -p /var/www/moodledata
 chown -R www-data:www-data /var/www/moodledata
 chmod -R 777 /var/www/moodledata
 
-chown -R www-data:www-data /var/www/html/moodle
-chmod -R 777 /var/www/html/moodle
+chown -R www-data:www-data /var/www/html
+chmod -R 777 /var/www/html
 
 # 4. Optimasi PHP 8.1
 PHPINI="/etc/php/8.1/apache2/php.ini"
