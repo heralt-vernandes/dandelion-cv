@@ -56,7 +56,7 @@ systemctl restart apache2
 
 clear
 
-echo "URL: https://moodle.geraldstudio.my.id
+echo "URL: https://moodle.geraldstudio.my.id"
 echo "$CFG->sslproxy = 1;"
 
 history -c 
