@@ -55,9 +55,3 @@ clear
 
 echo "URL: https://moodle.geraldstudio.my.id"
 echo "$CFG->sslproxy = 1;"
-
-history -c 
-
-cat /dev/null > ~/.bash_history 
-
-set +o history
