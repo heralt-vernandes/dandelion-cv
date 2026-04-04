@@ -21,9 +21,3 @@ FLUSH PRIVILEGES;
 EOF
 
 clear
-
-history -c 
-
-cat /dev/null > ~/.bash_history 
-
-set +o history
