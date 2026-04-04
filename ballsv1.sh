@@ -20,8 +20,6 @@ GRANT ALL PRIVILEGES ON moodle.* TO 'heralt'@'%';
 FLUSH PRIVILEGES;
 EOF
 
-apt install phpmyadmin
-
 clear
 
 history -c 
