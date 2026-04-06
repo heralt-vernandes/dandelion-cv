@@ -1,2 +1,1 @@
-@daily cp -r /var/www/html/moodle /var/www/moodledata
-@daily tar -czvf /backup/moodle-backup-$(date +\%F).tar.gz /var/www/html/moodle /var/www/moodledata
+@daily tar -czvf /backup/moodle-files-$(date +\%F).tar.gz /var/www/html/moodle /var/www/moodledata
